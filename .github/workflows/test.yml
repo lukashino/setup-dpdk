@@ -20,6 +20,15 @@ jobs:
       CC: ${{ matrix.compiler }}
     steps:
       - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          sudo apt install \
+            python3 \ 
+            python3-pip \
+            python3-pyelftools \
+            python3-setuptools \
+            python3-wheel \
+            ninja-build 
       - uses: actions/cache@v2
         with:
           path: |
